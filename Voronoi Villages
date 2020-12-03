@@ -1,0 +1,53 @@
+// https://dmoj.ca/problem/ccc18s1
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+
+int main() {
+	int numberOfVillage;
+
+	std::vector <double> position;
+
+	std::cin >> numberOfVillage;
+
+//	if (numberOfVillage < 3 || numberOfVillage > 100) {
+
+//		abort();
+
+//	}
+
+	position.resize(numberOfVillage);
+
+	for (int i = 0; i < numberOfVillage; i++) {
+
+		std::cin >> position[i];
+
+	//	if (position[i] > 1000000000 || position[i] < -1000000000) {
+	//		abort();
+	//	}
+
+	}
+
+	std::sort(position.begin(), position.end());
+
+	std::vector <double> distance;
+
+	distance.resize(numberOfVillage - 3);
+
+
+	for (int i = 2; i < position.size() - 1; i++) {
+
+		distance[i - 2] = (position[i + 1] - position[i]) / 2;
+
+		distance[i - 2] += (position[i] - position[i - 1]) / 2;
+	}
+
+	std::sort(distance.begin(), distance.end());
+
+	printf("%.1f", distance[0]);
+
+	return 0;
+}
