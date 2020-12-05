@@ -15,7 +15,7 @@ int main() {
 
 //	if (numberOfVillage < 3 || numberOfVillage > 100) {
 
-//		abort();
+//		return 0; // this is why my solution was not 100%
 
 //	}
 
@@ -26,7 +26,8 @@ int main() {
 		std::cin >> position[i];
 
 	//	if (position[i] > 1000000000 || position[i] < -1000000000) {
-	//		abort();
+	//		return 0; // this is why my solution was not 100%
+
 	//	}
 
 	}
